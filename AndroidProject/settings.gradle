@@ -1,4 +1,4 @@
-include ':module_a'
 include ':common_library'
+include ':module_a'
 include ':app'
 rootProject.name = "AndroidProject"

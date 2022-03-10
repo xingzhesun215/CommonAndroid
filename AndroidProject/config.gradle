@@ -1,0 +1,41 @@
+/**
+ * 全局统一配置
+ */
+ext {
+    /**
+     * module开关统一声明在此处
+     * true：module作为application，可单独打包为apk
+     * false：module作为library，可作为宿主application的组件
+     *
+     * module是否添加到主项目上
+     */
+    isModele_Main = true
+    isModule_A = false
+
+    isModuleA_To_Main=true
+
+    /**
+     * 版本统一管理
+     */
+    versions = [
+            buildToolsVersion : "30.0.3",
+
+            applicationId_Main: "com.sun.module_main",
+            applicationId_A   : "com.sun.module_a",
+            applicationId_B   : "com.sun.module_b",
+            versionCode       : 100,
+            versionName       : "1.0.0",
+
+            compileSdkVersion : 28,
+            minSdkVersion     : 21,
+            targetSdkVersion  : 28,
+
+            multidexVersion   : "2.0.0",
+    ]
+
+    dependencies = [
+            //方法数超过65535解决方法64K MultiDex分包方法
+            "multidex": "androidx.multidex:multidex:${versions["multidexVersion"]}",
+
+    ]
+}
