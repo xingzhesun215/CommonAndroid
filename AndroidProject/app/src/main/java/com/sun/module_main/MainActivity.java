@@ -13,7 +13,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        startActivity(new Intent(this, com.sun.module_a.MainActivity.class));
+        startActivity(new Intent(this, com.sun.module_a.SecondActivity.class));
     }
 
     @Override
