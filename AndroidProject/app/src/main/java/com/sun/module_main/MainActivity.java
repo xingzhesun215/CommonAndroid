@@ -1,6 +1,6 @@
 package com.sun.module_main;
 
-import com.sun.common_library.BaseActivity;
+import com.sun.common_library.base.BaseActivity;
 
 public class MainActivity extends BaseActivity {
 
