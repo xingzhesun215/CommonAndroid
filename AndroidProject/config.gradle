@@ -14,6 +14,14 @@ ext {
 
     isModuleA_To_Main=true
 
+
+    keyinfo = [
+            key_alias : "androidkey",
+            key_password : "android",
+            store_file : "android.keystore",
+            store_password : "android",
+    ]
+
     /**
      * 版本统一管理
      */

@@ -35,10 +35,13 @@ android {
     }
     sourceSets{
         main{
-            if(isModule_A.toBoolean()){
+            if(isModule_A.toBoolean()){//此时为组件开发,各开发各的
                 manifest.srcFile 'src/main/module/AndroidManifest.xml'
-            }else {
+            }else {//此时为集成开发,合 将debug目录下分开
                 manifest.srcFile 'src/main/AndroidManifest.xml'
+                java{
+                    exclude 'debug/**'
+                }
             }
         }
     }

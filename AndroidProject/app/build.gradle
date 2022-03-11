@@ -24,6 +24,15 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            storeFile file(keyinfo["store_file"])
+            keyAlias keyinfo["key_alias"]
+            keyPassword keyinfo["key_password"]
+            storePassword keyinfo["store_password"]
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -34,6 +43,18 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    applicationVariants.all { variant ->
+        // apk 输出文件名配置
+        variant.outputs.all { output ->
+            outputFileName = rootProject.getName() + '_v' + variant.versionName + '_' + variant.buildType.name
+            if (variant.buildType.name == buildTypes.release.getName()) {
+                outputFileName += '_' + new Date().format('MMdd')
+            }
+            outputFileName += '.apk'
+        }
+    }
+
 }
 
 dependencies {
