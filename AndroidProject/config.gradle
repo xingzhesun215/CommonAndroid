@@ -41,9 +41,14 @@ ext {
             multidexVersion   : "2.0.0",
     ]
 
-    dependencies = [
+    //特意区别dependencies,免得关键字干扰
+    dependencyss = [
             //方法数超过65535解决方法64K MultiDex分包方法
-            "multidex": "androidx.multidex:multidex:${versions["multidexVersion"]}",
+            "multidex": "androidx.multidex:multidex:2.0.0",
 
+            //Arouter路由跳转
+            "arouter-api" :'com.alibaba:arouter-api:1.3.1',
+            "arouter-compiler" :'com.alibaba:arouter-compiler:1.1.4',
     ]
+
 }

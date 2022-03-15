@@ -4,8 +4,10 @@
 
     <!--library使用-->
     <application>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".AMainActivity" />
         <activity android:name="debug.SecondActivity" />
+        <activity android:name=".arouter.ARouterOneActivity" />
+        <activity android:name=".arouter.ARouterTwoActivity" />
     </application>
 
 </manifest>

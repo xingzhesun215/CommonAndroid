@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World Main" />
+        android:onClick="moduleParamsClick"
+        android:text="本module页面跳转,带参数" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="ArouterClick"
-        android:text="跳到路由检测页面" />
+        android:onClick="otherModuleParamsClick"
+        android:text="其他module页面跳转" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="LoginClick"
+        android:text="登录拦截" />
 </LinearLayout>

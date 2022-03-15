@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/tv_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World Main" />
@@ -13,7 +14,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="ArouterClick"
-        android:text="跳到路由检测页面" />
+        android:onClick="loginClick"
+        android:text="登录操作" />
 
 </LinearLayout>

@@ -8,6 +8,7 @@ import android.view.Window;
 import androidx.activity.ComponentActivity;
 import androidx.annotation.Nullable;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.sun.common_library.util.KeyboardUtil;
 
 
@@ -16,7 +17,12 @@ public abstract class BaseActivity extends ComponentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        init();
         initActivity();
+    }
+
+    private void init() {
+        ARouter.getInstance().inject(this);
     }
 
     protected void initActivity() {
@@ -57,7 +63,7 @@ public abstract class BaseActivity extends ComponentActivity {
         // 点击外部隐藏软键盘，提升用户体验
         getContentView().setOnClickListener(v -> {
             // 隐藏软键，避免内存泄漏
-            KeyboardUtil.   hideKeyboard(getCurrentFocus());
+            KeyboardUtil.hideKeyboard(getCurrentFocus());
         });
     }
 
@@ -70,7 +76,7 @@ public abstract class BaseActivity extends ComponentActivity {
     public void finish() {
         super.finish();
         // 隐藏软键，避免内存泄漏
-        KeyboardUtil. hideKeyboard(getCurrentFocus());
+        KeyboardUtil.hideKeyboard(getCurrentFocus());
     }
 
     /**
